@@ -6,6 +6,7 @@
 
 package com.refilwe.preschool.model;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,7 @@ import java.util.Objects;
  */
 public class Schedule {
     
+     private Date scheduleDate;
     private String startTime;
     private String endTime;
     private String weekDay;
@@ -23,6 +25,9 @@ public class Schedule {
         return startTime;
     }
 
+    public Date getScheduleDate() {
+        return scheduleDate;
+    }
     public String getEndTime() {
         return endTime;
     }
@@ -41,14 +46,17 @@ public class Schedule {
     
     private Schedule(Builder builder){
         
+        scheduleDate = builder.scheduleDate;
         group = builder.group;
         startTime = builder.startTime;
         endTime = builder.endTime;
         weekDay = builder.weekDay;
+        
     }
     
     public static class Builder{
         
+        private Date scheduleDate;
         private String startTime;
         private String endTime;
         private String weekDay;
@@ -57,7 +65,12 @@ public class Schedule {
         public Builder(String weekDay){
             
         }
-
+        
+        public Builder ScheduleDate(Date scheduleDate){
+            this.scheduleDate = scheduleDate;
+                   return this;
+        }
+        
         public Builder StartTime(String startTime){
             this.startTime = startTime;
                    return this;
@@ -95,10 +108,13 @@ public class Schedule {
             return false;
         }
         final Schedule other = (Schedule) obj;
+        
+         if (!Objects.equals(this.scheduleDate, other.scheduleDate)) {
+            return false;
+        }
         if (!Objects.equals(this.startTime, other.startTime)) {
             return false;
         }
-
         if (!Objects.equals(this.endTime, other.endTime)) {
             return false;
         }

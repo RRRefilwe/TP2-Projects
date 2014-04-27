@@ -14,9 +14,9 @@ import java.util.Objects;
  */
 public class Room {
     
-    public String roomName;
-    public int roomNumber;
-    public int seats;
+    private String roomName;
+    private int roomNumber;
+    private int seats;
 
     public String getRoomName() {
         return roomName;

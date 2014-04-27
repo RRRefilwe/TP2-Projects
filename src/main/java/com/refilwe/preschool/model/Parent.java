@@ -20,7 +20,6 @@ public class Parent {
     private String nextOKinID;
     private String companyName;
     private List<Contact> contact;
-    private List<Child> child;
     private Account account;
     private Address address;
     private Person person;
@@ -39,9 +38,6 @@ public class Parent {
     }
     public Account getAccount() {
         return account;
-    }
-    public List getChild(){
-        return child;
     }
 
     public List getContact() {
@@ -69,7 +65,6 @@ public class Parent {
         address = builder.address;
         contact = builder.contact;
         account = builder.account;
-        child = builder.child;
         person = builder.person; 
         
     }
@@ -80,7 +75,6 @@ public class Parent {
         private String nextOKinID;
         private String companyName;
         private List <Contact> contact;
-        private List <Child> child;
         private Address address;
         private Account account;
         private Person person;
@@ -108,12 +102,7 @@ public class Parent {
             contact = value;
             return this;
         }
-        
-        public Builder Child(List value){
-            child = value;
-            return this;
-        }
-        
+    
         public Builder Account(Account a){
             account = a;
             return this;
@@ -131,8 +120,6 @@ public class Parent {
         
     }
    
-    
-
     @Override
     public int hashCode() {
         int hash = 7;

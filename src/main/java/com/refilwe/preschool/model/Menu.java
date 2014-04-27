@@ -53,16 +53,26 @@ public class Menu {
         
     }
     
+    private Menu(Builder builder){
+        date = builder.date;
+        startTime = builder.startTime;
+        endTime = builder.endTime;
+        timeOfDay = builder.timeOfDay;
+        food= builder.food;
+        numberOfItem = builder.numberOfItem;
+    }
+    
     public static class Builder{
         
-        private Date date;
-        private String startTime;
-        private String endTime;
-        private String timeOfDay;
-        private String food;
-        private int numberOfItem;
+     private Date date;
+     private String startTime;
+     private String endTime;
+     private String timeOfDay;
+     private String food;
+     private int numberOfItem;
+     
         
-        public Builder(String value){
+       public Builder(String value){
            startTime = value;   
         }
        public Builder Date(Date d){
@@ -89,8 +99,13 @@ public class Menu {
            numberOfItem = no;
            return this;
        }
+       public Menu build(){
+           return new Menu(this);
+       }
+            
+    }
        
-        @Override
+    @Override
     public int hashCode() {
         int hash = 7;
         return hash;
@@ -135,4 +150,4 @@ public class Menu {
     
     
     
-}
+

@@ -7,6 +7,7 @@
 package com.refilwe.preschool.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ public class Register {
     private String grade;
     private Date date;
     private Lesson lesson;
-    private Child child;
+    private List<Child> child;
 
     public String getGrade() {
         return grade;
@@ -32,7 +33,7 @@ public class Register {
         return lesson;
     }
 
-    public Child getChild() {
+    public List getChild() {
         return child;
     }
     
@@ -41,6 +42,11 @@ public class Register {
     }
     
     private Register(Builder builder){
+        grade = builder.grade;
+        date = builder.date;
+        lesson = builder.lesson;
+        child = builder.child;
+           
         
     }
     
@@ -49,7 +55,7 @@ public class Register {
         private String grade;
         private Date date;
         private Lesson lesson;
-        private Child child;
+        private List<Child> child;
         
         public Builder (String g){
             grade = g;
@@ -63,7 +69,7 @@ public class Register {
             lesson = l;
             return this;
         }
-        public Builder Child(Child c){
+        public Builder Child(List c){
             child = c;
             return this;
         }

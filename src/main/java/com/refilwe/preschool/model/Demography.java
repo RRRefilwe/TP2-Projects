@@ -17,9 +17,6 @@ public class Demography {
     private int age;
     private String race;
     private String gender;
-
-
-    
     
     private Demography(){
         
