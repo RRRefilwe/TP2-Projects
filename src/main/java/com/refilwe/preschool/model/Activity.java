@@ -19,10 +19,15 @@ public class Activity {
     private String objective;
     private String description;
     private List<Toy> toy;
+     private List<Schedule> schedule;
     private Playground playground;
 
     public String getActName() {
         return actName;
+    }
+    
+    public List getSchedule (){
+        return schedule;
     }
 
     public String getObjective() {
@@ -50,6 +55,7 @@ public class Activity {
         description = builder.description;
         objective = builder.objective;
         toy = builder.toy;
+        schedule = builder.schedule;
         playground = builder.playground;
     }
     
@@ -59,6 +65,7 @@ public class Activity {
         private String objective;
         private String description;
         private List<Toy> toy;
+        private List<Schedule> schedule;
         private Playground playground;
         
         public Builder(String actName){
@@ -81,6 +88,11 @@ public class Activity {
         }
         public Builder Playground(Playground playground){
             this.playground = playground;
+            return this;
+        }
+        
+        public Builder Schedule(List s){
+            this.schedule = s;
             return this;
         }
         
@@ -117,6 +129,9 @@ public class Activity {
             return false;
         }
         if (!Objects.equals(this.toy, other.toy)) {
+            return false;
+        }
+        if (this.schedule != other.schedule) {
             return false;
         }
         if (!Objects.equals(this.playground, other.playground)) {

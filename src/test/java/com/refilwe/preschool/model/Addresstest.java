@@ -6,9 +6,7 @@
 
 package com.refilwe.preschool.model;
 
-import com.refilwe.preschool.model.Address;
 import junit.framework.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;

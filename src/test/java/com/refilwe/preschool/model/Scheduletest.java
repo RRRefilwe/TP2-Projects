@@ -28,8 +28,8 @@ public class Scheduletest {
     //
      @Test
      public void Schedule() {
-          Activity act = new Activity.Builder("Soccer").Description("Pass Ball around the Field").Objective("Physical Excercise").Playground(null).Toy(null).build();
-         Schedule s = new Schedule.Builder("Tuesday").StartTime("8:30").EndTime("10:30").Activity(act).Lesson(null).build();
+         
+         Schedule s = new Schedule.Builder("Tuesday").StartTime("8:30").EndTime("10:30").build();
          Assert.assertNotNull(s);
          Assert.assertEquals("Tuesday", s.getWeekDay());
      }

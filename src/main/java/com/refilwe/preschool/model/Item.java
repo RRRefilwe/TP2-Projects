@@ -16,13 +16,18 @@ public class Item {
     
     private String itemName;
     private String itemRef;
+    private String type;
     private double costPerItem;
     private int numberOfItem;
 
     public String getItemName() {
         return itemName;
     }
-
+    
+    public String getType(){
+        return type;
+    }
+    
     public String getItemRef() {
         return itemRef;
     }
@@ -39,6 +44,8 @@ public class Item {
         
     }
     private Item(Builder builder){
+        
+          type = builder.type;
           itemName = builder.itemName;
           itemRef = builder.itemRef;
           costPerItem = builder.costPerItem;
@@ -48,13 +55,37 @@ public class Item {
     
     public static class Builder{
         
+        
         private String itemName;
+        private String type;
         private String itemRef;
         private double costPerItem;
         private int numberOfItem;
         
+       public Builder(String value){
+           itemName = value;
+            
+       }
         
+       public Builder Type(String t){
+           type = t;
+           return this;
+       }
+       
+       public Builder ItemRef(String ref){
+           itemRef = ref;
+           return this;
+       }
+       
+       public Builder CostPerItem(double cost){
+           costPerItem = cost;
+           return this;
+       }
         
+       public Builder NumberOfItem(int no){
+           numberOfItem = no;
+           return this;
+       } 
     }
     @Override
     public int hashCode() {
@@ -74,15 +105,21 @@ public class Item {
         if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
+
         if (!Objects.equals(this.itemRef, other.itemRef)) {
             return false;
         }
+        
         if (Double.doubleToLongBits(this.costPerItem) != Double.doubleToLongBits(other.costPerItem)) {
             return false;
         }
         if (this.numberOfItem != other.numberOfItem) {
             return false;
         }
+        if (this.type != other.type) {
+            return false;
+        }
+       
         return true;
     }
     

@@ -7,7 +7,6 @@
 package com.refilwe.preschool.model;
 
 import junit.framework.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -29,7 +28,7 @@ public class Activitytest {
      @Test
      public void Activity() {
          
-         Activity act = new Activity.Builder("Soccer").Description("Pass Ball around the Field").Objective("Physical Excercise").Playground(null).Toy(null).build();
+         Activity act = new Activity.Builder("Soccer").Description("Pass Ball around the Field").Objective("Physical Excercise").Playground(null).Schedule(null).Toy(null).build();
          Assert.assertEquals("Soccer", act.getActName());
          Assert.assertNull(act.getToy());
      }

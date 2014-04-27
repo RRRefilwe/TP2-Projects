@@ -16,15 +16,19 @@ public class Child {
     
     private Person person;
     private String tagNumber;
+    private Parent parent;
 
     public Person getPerson() {
         return person;
     }
 
-        public String getTagNumber() {
+    public String getTagNumber() {
         return tagNumber;
     }
-        
+     
+    public Parent getParent() {
+        return parent;
+    }   
      private Child(){
          
      }
@@ -32,11 +36,13 @@ public class Child {
          
          person = builder.person;
          tagNumber = builder.tagNumber;
+         parent = builder.parent;
          
      }  
      
     public static class Builder{
         private Person person;
+        private Parent parent;
         private String tagNumber;
         
         public Builder(String t){
@@ -48,6 +54,10 @@ public class Child {
             return this;
         }
         
+        public Builder Parent(Parent p){
+            parent = p;
+            return this;
+        }
         public Child build(){
             return new Child(this);
         }
@@ -72,6 +82,9 @@ public class Child {
             return false;
         }
         
+        if (!Objects.equals(this.parent, other.parent)) {
+            return false;
+        }
         if (!Objects.equals(this.tagNumber, other.tagNumber)) {
             return false;
         }

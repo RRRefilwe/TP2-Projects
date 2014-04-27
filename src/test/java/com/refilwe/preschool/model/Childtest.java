@@ -29,9 +29,7 @@ public class Childtest {
      @Test
      public void Child() {
          
-         Demography d = new Demography.Builder(10).Gender("Female").Race("Black").build();
-         Address a = new Address.Builder(1779).PhysicalAddress("293 ModisaOtsile").PostalAddress(null).build();
-         Person p = new Person.Builder("Musa").surname("Radebe").id("2012030094088").Demography(d).address(a).built();
+        Person p = new Person.Builder("Musa").surname("Radebe").id("2012030094088").built();
          
          Child c = new Child.Builder("A001").Person(p).build();
          Assert.assertEquals("A001", c.getTagNumber());

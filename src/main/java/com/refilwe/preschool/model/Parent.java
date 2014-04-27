@@ -20,7 +20,9 @@ public class Parent {
     private String nextOKinID;
     private String companyName;
     private List<Contact> contact;
-    private Child child;
+    private List<Child> child;
+    private Account account;
+    private Address address;
     private Person person;
     
 
@@ -32,15 +34,22 @@ public class Parent {
         return nextOKinID;
     }
     
-        public String getCompanyName() {
+    public String getCompanyName() {
         return companyName;
     }
-    public Child getChild(){
+    public Account getAccount() {
+        return account;
+    }
+    public List getChild(){
         return child;
     }
 
     public List getContact() {
         return contact;
+    }
+    
+    public Address getAddress(){
+        return address;
     }
 
     public Person getPerson() {
@@ -57,7 +66,9 @@ public class Parent {
         nextOKinID = builder.nextOfKinName;
         companyName = builder.companyName;
         companyName = builder.companyName;
+        address = builder.address;
         contact = builder.contact;
+        account = builder.account;
         child = builder.child;
         person = builder.person; 
         
@@ -69,7 +80,9 @@ public class Parent {
         private String nextOKinID;
         private String companyName;
         private List <Contact> contact;
-        private Child child;
+        private List <Child> child;
+        private Address address;
+        private Account account;
         private Person person;
         
         public Builder(String value){
@@ -86,13 +99,23 @@ public class Parent {
             return this;
         }
         
+        public Builder Address(Address a){
+            address = a;
+            return this;
+        }
+        
         public Builder List(List value){
             contact = value;
             return this;
         }
         
-        public Builder Child(Child value){
+        public Builder Child(List value){
             child = value;
+            return this;
+        }
+        
+        public Builder Account(Account a){
+            account = a;
             return this;
         }
         
@@ -132,6 +155,12 @@ public class Parent {
             return false;
         }
         if (!Objects.equals(this.contact, other.contact)) {
+            return false;
+        }
+        if (!Objects.equals(this.address, other.address)) {
+            return false;
+        }
+        if (!Objects.equals(this.account, other.account)) {
             return false;
         }
         if (!Objects.equals(this.person, other.person)) {

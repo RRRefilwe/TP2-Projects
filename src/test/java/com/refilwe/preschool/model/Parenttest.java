@@ -33,11 +33,11 @@ public class Parenttest {
          Contact con = new Contact.Builder("0729000458").HomeTelephone("0218889000").WorkNumber("0219293545").build();
          Demography d = new Demography.Builder(24).Gender("Female").Race("Black").build();
          Address a = new Address.Builder(1779).PhysicalAddress("29 Mosidi").PostalAddress("PO Box A29").build();
-         Person p = new Person.Builder("Tshidi").surname("Mlaza").id("9012049400084").Demography(d).address(a).built();
-         ArrayList<Contact> conta = new ArrayList<Contact>();
+         Person p = new Person.Builder("Tshidi").surname("Mlaza").id("9012049400084").Demography(d).built();
+         ArrayList<Contact> conta = new ArrayList<>();
          conta.add(con);
          
-         Parent par = new Parent.Builder("PetroSA").NextOfKinName("Dikeledi").NextOKinID("9012080048088").Person(p).List(conta).build();
+         Parent par = new Parent.Builder("PetroSA").NextOfKinName("Dikeledi").NextOKinID("9012080048088").Person(p).Address(a).List(conta).build();
          
          Assert.assertEquals("PetroSA", par.getCompanyName());
      }

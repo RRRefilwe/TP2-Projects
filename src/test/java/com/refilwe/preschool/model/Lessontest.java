@@ -28,7 +28,7 @@ public class Lessontest {
     //
      @Test
      public void Lesson() {
-         Lesson l = new Lesson.Builder(022).LessonName("Mathematics").Objective("learn Arthmetic").Room(null).build();
+         Lesson l = new Lesson.Builder(022).LessonName("Mathematics").Objective("learn Arthmetic").Room(null).Schedule(null).build();
          Assert.assertNotNull(l);
          Assert.assertEquals("Mathematics", l.getLessonName());
          

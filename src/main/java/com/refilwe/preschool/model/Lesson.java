@@ -6,6 +6,7 @@
 
 package com.refilwe.preschool.model;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -17,10 +18,15 @@ public class Lesson {
     private String lessonName;
     private String objective;
     private int lessonID;
+    private List <Schedule> schedule;
     private Room room;
 
     public String getLessonName() {
         return lessonName;
+    }
+    
+    public List getSchedule (){
+        return schedule;
     }
 
     public String getObjective() {
@@ -52,6 +58,7 @@ public class Lesson {
         private String lessonName;
         private String objective;
         private int lessonID;
+        private List<Schedule> schedule;
         private Room room;
         
         public Builder(int lessonID){
@@ -65,6 +72,11 @@ public class Lesson {
         }
         public Builder Objective(String objective){
             this.objective = objective;
+            return this;
+        }
+        
+        public Builder Schedule(List s){
+            this.schedule = s;
             return this;
         }
         
@@ -100,6 +112,9 @@ public class Lesson {
             return false;
         }
         if (this.lessonID != other.lessonID) {
+            return false;
+        }
+        if (this.schedule != other.schedule) {
             return false;
         }
         if (!Objects.equals(this.room, other.room)) {

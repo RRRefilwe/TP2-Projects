@@ -29,12 +29,12 @@ public class Persontest {
      @Test
      public void person() {
          
-         Person p = new Person.Builder("Refilwe").surname("Radebe").id("AA11").Demography(null).address(null).built();
+         Person p = new Person.Builder("Refilwe").surname("Radebe").id("AA11").Demography(null).built();
          Assert.assertEquals(p.getFirstname(), "Refilwe");
          Assert.assertEquals(p.getSurname(), "Radebe");
          Assert.assertNotEquals(p.getId(), "BB22");
          Assert.assertNull(p.getDemography());
-         Assert.assertNull(p.getAddress());
+       
      }
      
 

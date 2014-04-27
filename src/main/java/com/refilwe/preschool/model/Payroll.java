@@ -24,7 +24,7 @@ public class Payroll {
     public double getSalary() {
         return salary;
     }
- 
+    
 
     public List<Employee> getEmployee() {
         return employee;

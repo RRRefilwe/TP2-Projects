@@ -6,11 +6,12 @@
 
 package com.refilwe.preschool.model;
 
-import static org.testng.Assert.*;
+import junit.framework.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -24,8 +25,13 @@ public class Containertest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void containerTest() {
+    
+        Container container = new Container.Builder(null).Compartments(10).Item(null).Size(25).build(); 
+        Assert.assertEquals(25, container.getSize());
+    
+    }
 
     @BeforeClass
     public static void setUpClass() throws Exception {

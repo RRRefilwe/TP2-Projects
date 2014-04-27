@@ -14,36 +14,53 @@ import java.util.Objects;
  */
 public class Employee {
     
+    private int empNumber;
     private String position;
     private Person person;
     private Contact contact;
-    private Demography demography;
+    private Address address;
+   
     
     private Employee(){
         
     }
     
     private Employee(Builder builder){
+        
+        empNumber = builder.empNumber;
         position = builder.position;
         person = builder.person;
         contact = builder.contact;
-        demography = builder.demography;
+        address = builder.address;
+        
     }
     
     public static class Builder{
         
+       private int empNumber;
        private String position;
        private Person person;
        private Contact contact;
-       private Demography demography;
+       private Address address;
+    
     
        public Builder(String value){
            position = value;
             
        }
         
+       public Builder Address(Address a){
+           address =a;
+           return this;
+       }
+       
+       public Builder EmpNumber(int empNo){
+           empNo = empNumber;
+           return this;
+       }
+       
        public Builder Person(Person p){
-           person =p;
+           person = p;
            return this;
        }
        
@@ -52,10 +69,7 @@ public class Employee {
            return this;
        }
        
-       public Builder Demography(Demography demo){
-           demography = demo;
-           return this;
-       }
+
        
        public Employee build(){
            
@@ -67,6 +81,9 @@ public class Employee {
     public String getPosition() {
         return position;
     }
+    public int getEmpNumber(){
+        return empNumber;
+    }
 
     public Person getPerson() {
         return person;
@@ -76,9 +93,6 @@ public class Employee {
         return contact;
     }
 
-    public Demography getDemography() {
-        return demography;
-    }
 
     @Override
     public int hashCode() {
@@ -98,15 +112,19 @@ public class Employee {
         if (!Objects.equals(this.position, other.position)) {
             return false;
         }
+        if (!Objects.equals(this.empNumber, other.empNumber)) {
+            return false;
+        }
+        if (!Objects.equals(this.address, other.address)) {
+            return false;
+        }
         if (!Objects.equals(this.person, other.person)) {
             return false;
         }
         if (!Objects.equals(this.contact, other.contact)) {
             return false;
         }
-        if (!Objects.equals(this.demography, other.demography)) {
-            return false;
-        }
+
         return true;
     }
     

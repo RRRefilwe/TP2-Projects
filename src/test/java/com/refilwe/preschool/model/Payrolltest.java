@@ -6,6 +6,8 @@
 
 package com.refilwe.preschool.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import junit.framework.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -29,7 +31,9 @@ public class Payrolltest {
      @Test
      public void Payroll() {
      
-         Payroll pay = new Payroll.Builder(14).Salary(2000.00).HourlyRate(2).Fees(20).Employee(null).build();
+         List <Employee> emp = new ArrayList<>();
+         emp.add(null);
+         Payroll pay = new Payroll.Builder(14).Salary(2000.00).HourlyRate(2).Fees(20).Employee(emp).build();
          Assert.assertNotNull(pay);
          Assert.assertEquals(14, pay.getRate());
      }

@@ -17,7 +17,6 @@ public class Person {
     private String firstname;
     private String surname;
     private String id;
-    private Address address;
     private Demography demography;
     
     private Person(){
@@ -29,7 +28,6 @@ public class Person {
          
          firstname = builder.firstname;
          surname = builder.surname;
-         address = builder.address;
          demography = builder.demography;
          id = builder.id;
          
@@ -40,7 +38,6 @@ public class Person {
         private String firstname;
         private String surname;
         private String id;
-        private Address address;
         private Demography demography;
         
         public Builder(String value){
@@ -58,11 +55,7 @@ public class Person {
             this.id = id;
             return this;
        }
-       public Builder address(Address value){
-           
-           address = value;
-           return this;
-       }
+
        public Builder Demography(Demography demo){
            demography = demo;
            return this;
@@ -72,9 +65,6 @@ public class Person {
            return new Person(this);
        }
        
-    }
-    public Address getAddress() {
-        return address;
     }
 
     public Demography getDemography() {
@@ -113,9 +103,6 @@ public class Person {
             return false;
         }
         if (!Objects.equals(this.surname, other.surname)) {
-            return false;
-        }
-        if (!Objects.equals(this.address, other.address)) {
             return false;
         }
         if (!Objects.equals(this.demography, other.demography)) {

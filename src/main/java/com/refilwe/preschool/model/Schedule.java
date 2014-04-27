@@ -14,20 +14,10 @@ import java.util.Objects;
  */
 public class Schedule {
     
-    private Lesson lesson;
-    private Activity activity;
     private String startTime;
     private String endTime;
     private String weekDay;
     private String group;
-    
-
-    public Lesson getLesson() {
-        return lesson;
-    }
-    public Activity getActivity(){
-        return activity;
-    }
 
     public String getStartTime() {
         return startTime;
@@ -51,8 +41,6 @@ public class Schedule {
     
     private Schedule(Builder builder){
         
-        lesson = builder.lesson;
-        activity = builder.activity;
         group = builder.group;
         startTime = builder.startTime;
         endTime = builder.endTime;
@@ -61,8 +49,6 @@ public class Schedule {
     
     public static class Builder{
         
-        private Lesson lesson;
-        private Activity activity;
         private String startTime;
         private String endTime;
         private String weekDay;
@@ -71,14 +57,7 @@ public class Schedule {
         public Builder(String weekDay){
             
         }
-        public Builder Lesson(Lesson lesson){
-            this.lesson = lesson;
-                   return this;
-        }
-         public Builder Activity(Activity activity){
-            this.activity = activity;
-                   return this;
-        }
+
         public Builder StartTime(String startTime){
             this.startTime = startTime;
                    return this;
@@ -116,15 +95,10 @@ public class Schedule {
             return false;
         }
         final Schedule other = (Schedule) obj;
-        if (!Objects.equals(this.lesson, other.lesson)) {
-            return false;
-        }
         if (!Objects.equals(this.startTime, other.startTime)) {
             return false;
         }
-        if (!Objects.equals(this.activity, other.activity)) {
-            return false;
-        }
+
         if (!Objects.equals(this.endTime, other.endTime)) {
             return false;
         }

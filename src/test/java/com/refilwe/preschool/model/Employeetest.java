@@ -30,10 +30,9 @@ public class Employeetest {
      public void Employee() {
          Contact con = new Contact.Builder("0833896148").HomeTelephone("011 755 1291").WorkNumber("0219293454").build();
          Demography d = new Demography.Builder(24).Gender("Female").Race("Black").build();
-         Address a = new Address.Builder(1779).PhysicalAddress("29 Mosidi").PostalAddress("PO Box A29").build();
-         Person p = new Person.Builder("Naledi").surname("Nbila").id("901245088085").Demography(d).address(a).built();
+         Person p = new Person.Builder("Naledi").surname("Nbila").id("901245088085").Demography(d).built();
          
-         Employee e = new Employee.Builder("SalesPerson").Contact(con).Demography(d).Person(p).build();
+         Employee e = new Employee.Builder("SalesPerson").Contact(con).Person(p).build();
          
          Assert.assertEquals(e, e);
          Assert.assertEquals("SalesPerson", e.getPosition());
